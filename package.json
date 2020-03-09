@@ -1,0 +1,24 @@
+{
+  "name": "ot-session-monitoring-test-case",
+  "version": "0.1.0",
+  "description": "Test case for inaccurate Opentok Session Monitoring events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholaswmin/ot-session-monitoring-test-case.git"
+  },
+  "keywords": [
+    "opentok",
+    "test-case",
+    "session-monitoring"
+  ],
+  "author": "nicholaswmin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicholaswmin/ot-session-monitoring-test-case/issues"
+  },
+  "homepage": "https://github.com/nicholaswmin/ot-session-monitoring-test-case#readme"
+}
