@@ -1,5 +1,5 @@
 # ot-session-monitoring-test-case
-Test case showcasing that [Session Monitoring][session-monitoring] events
+MCVE Test case showcasing that [Session Monitoring][session-monitoring] events
 sent by Tokbox are innacurate.
 
 This test case concerns the nicholas@bitpaper.io account,
@@ -49,13 +49,13 @@ We only deal with `streamCreated` and `streamDestroyed` events. We ignore
 when calculating *published* minutes.
 
 When a `streamCreated` event comes through:
- - Check if a saved `Stream` exists with that particular `stream.id`.
+ - Check if a *saved Stream* exists with that particular `stream.id`.
    - If not, create a new `Stream` with the stream properties declared in the
      event and save it in *saved Streams*.
    - If yes, do nothing.
 
 When a `streamDestroyed` event comes through:
-  - Check if a saved `Stream` exists with that particular `stream.id`.
+  - Check if *saved Stream* exists with that particular `stream.id`.
     - If not, do nothing.
     - If yes, subtract the `stream.createdAt` timestamp from the
       `event.timestamp` and save the result as the `stream.duration`.
