@@ -26,7 +26,7 @@ To illustrate this we:
 They do not align. We calculate **46951 minutes** while the
 [Insights Dashboard][insights-dashboard] states that we used **43564 minutes**.
 
-![Insights Dashboard Screenshot showing 43564 minutes for March 6]("./insights-dash-screenshot.png")
+![Insights Dashboard Screenshot showing 43564 minutes for March 6](https://github.com/nicholaswmin/ot-session-monitoring-test-case/blob/master/insights-dash-screenshot.png?raw=true)
 
 ## Run
 
