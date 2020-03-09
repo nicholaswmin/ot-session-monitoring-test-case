@@ -1,36 +1,12 @@
 'use strict'
 
 const fs = require('fs')
-const filepath = './2020-03-06T00:00:00.000Z-to-2020-03-06T23:59:59.999Z.json'
+const Stream = require('./classes/Stream')
+const filepath = './sample-events/2020-03-06T00:00:00.000Z-to-2020-03-06T23:59:59.999Z.json'
+const events = JSON.parse(fs.readFileSync(filepath, 'utf8'))
+
 console.log('Handling events...')
 
-// Class to recreate Streams.
-class Stream {
-  constructor(stream) {
-    // Standard Stream properties
-    this.id = stream.id
-    this.createdAt = stream.createdAt
-    this.name = stream.name
-    this.videoType = stream.videoType
-
-    // This will get set when we end the stream, using info from
-    // the `streamDestroyed` event.
-    this.destroyReason = stream.destroyReason || null
-    this.duration = stream.duration || null
-    this.destroyedAt = stream.destroyedAt || null
-  }
-
-  // Method to *end* the stream. When a stream is ended,
-  // it's total duration is calculated.
-  end({ timestamp, reason }) {
-    this.destroyReason = reason
-    this.duration = timestamp - this.createdAt
-    this.destroyedAt = timestamp
-  }
-}
-
-// Load Mar. 6 events from JSON.
-const events = JSON.parse(fs.readFileSync(filepath, 'utf8'))
 // Will hold all Streams created by `streamCreated` events.
 const savedStreams = []
 
@@ -46,7 +22,8 @@ events
         break;
       case 'streamDestroyed':
         // find existing Saved Stream and end it.
-        const stream = savedStreams.find(stream => stream.id === event.stream.id)
+        const stream =
+          savedStreams.find(stream => stream.id === event.stream.id)
 
         if (stream) {
           stream.end({
@@ -61,7 +38,8 @@ events
   })
 
 // Calculate total duration of all Saved Streams.
-const totalStreamsDurationSeconds = savedStreams.reduce((sum, s) => sum += s.duration, 0)
+const totalStreamsDurationSeconds =
+  savedStreams.reduce((sum, s) => sum += s.duration, 0)
 
 // Log the result in minutes.
 console.log({
