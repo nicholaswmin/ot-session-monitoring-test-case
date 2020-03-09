@@ -35,9 +35,11 @@ Install [NodeJS][node], clone this repo, then:
 ```bash
 $ node index.js
 # The process will load the events JSON,
-# iterate over all events for Mar. 6,
-# create the streams, end them, then calculate their
-# total duration in minutes and log the result.
+# iterate over all events for Mar. 6 and:
+# - Recreate the streams.
+# - End them.
+# - Calculate the sum of total duration in minutes.
+# - Log the result.
 ```
 
 ## How we calculate minutes.
