@@ -62,6 +62,9 @@ When a `streamDestroyed` event comes through:
 
 When done, get all *saved Streams* and sum their `stream.duration`.
 
+This exact logic is followed in code,
+found in `./index.js` will ample code comments.
+
 ## Assumptions made
 
 ### This repo includes all Session Monitoring events for March 6
