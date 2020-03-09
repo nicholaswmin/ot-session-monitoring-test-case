@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs')
-const filepath = './2020-03-06T00:00:01.289Z-to-2020-03-06T23:59:56.767Z.json'
+const filepath = './2020-03-06T00:00:00.000Z-to-2020-03-06T23:59:59.999Z.json'
 console.log('Handling events...')
 
 // Class to recreate Streams.
